@@ -4,6 +4,7 @@ This repository contains the Vagrantfile and instructions to get up and running 
 
   - [icestorm](http://www.clifford.at/icestorm/)
   - [yosys](https://github.com/YosysHQ/yosys)
+  - [nextpnr](https://github.com/YosysHQ/nextpnr)
   - [SymbiYosys](https://github.com/YosysHQ/SymbiYosys)
     - [Z3](https://github.com/Z3Prover/z3)
     - [yices2](https://github.com/SRI-CSL/yices2)
@@ -17,7 +18,12 @@ This repository contains the Vagrantfile and instructions to get up and running 
 You don't need to use this VM, in fact if you're able to get everything running locally it probably would be a more optimal setup. This virtual machine is provided as a reference if you're struggling with setting up the tools, running Windows or prefer to keep things isolated.
 
 
-## Instructions
+## Download pre-built VM image
+
+...not ready yet.
+
+
+## Build Instructions
 
   - Make sure you have recent versions of both [Vagrant](https://www.vagrantup.com/downloads.html) and [Virtualbox](https://www.virtualbox.org/wiki/Downloads) installed on your system
   - Clone this repository and `cd` into it
