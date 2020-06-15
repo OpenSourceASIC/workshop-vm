@@ -28,6 +28,13 @@ make config-clang
 make
 sudo make install
 
+echo "### Setting up nextpnr -- https://github.com/YosysHQ/nextpnr"
+git clone https://github.com/YosysHQ/nextpnr.git ~/tools/nextpnr
+cd ~/tools/nextpnr
+cmake -DARCH=ice40 .
+make -j$(nproc)
+sudo make install
+
 echo "### Setting up SymbiYosys -- https://github.com/YosysHQ/SymbiYosys"
 git clone https://github.com/YosysHQ/SymbiYosys.git ~/tools/SymbiYosys
 cd ~/tools/SymbiYosys
@@ -101,12 +108,16 @@ tar xaf ngspice-32.tar.gz
 cd ngspice-32
 ./configure
 make
-sudo make install 
+sudo make install
 
 # XXX: add shortcuts to "favorites" panel as desktop is not a thing anymore, apparently. ugh.
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'sakura.desktop']"
 
 # XXX: clone template repo?
+
+# cleanup
+echo "### Removing build directories for tools"
+sudo rm -rf ~/tools
 
 # If this is the first time we are running this, reboot.
 if [[ ! -e "/home/vagrant/.init_done" ]]; then
